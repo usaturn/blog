@@ -1,0 +1,5 @@
+pip
+sphinx
+pillow
+sphinxcontrib-trimblank
+ablog

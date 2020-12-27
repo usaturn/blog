@@ -1,0 +1,273 @@
+make menuconfig の KVM 用パラメータ
+===================================
+
+
+コンテナ用 ::
+
+    CONFIG_DEVPTS_MULTIPLE_INSTANCES=y
+
+
+UEFI の Linux カーネル設定オプション ::
+
+    CONFIG_RELOCATABLE=y
+    CONFIG_EFI=y
+    CONFIG_EFI_STUB=y #手動
+    CONFIG_FB_EFI=y
+    CONFIG_FRAMEBUFFER_CONSOLE=y
+
+    UEFI Runtime Variables Support (efivarfs ファイルシステム - /sys/firmware/efi/efivars)。
+    CONFIG_EFIVAR_FS=y #手動
+
+    UEFI Runtime Variables Support (古い efivars sysfs インターフェイス - /sys/firmware/efi/vars)。このオプションは無効にしてください。
+    CONFIG_EFI_VARS=n #手動
+
+    GUID Partition Table GPT 設定オプション - UEFI サポートのために必須
+    CONFIG_EFI_PARTITION=y
+
+UEFI用？
+
+    [*] Enable the block layer  --->
+        Partition Types  --->
+            [*] Advanced partition selection
+            [*]   EFI GUID Partition support
+    Processor type and features  --->
+        [*] EFI runtime service support
+    Firmware Drivers  --->
+            EFI (Extensible Firmware Interface) Support -->
+                <*> EFI Variable Support via sysfs
+
+
+UEFI,systemd,KVM ホスト用
+
+  Linux/x86 4.4.6-gentoo Kernel Configuration
+
+  General setup  --->
+    <*> Kernel .config support
+    [*]   Enable access to .config through /proc/config.gz
+    [*] Memory placement aware NUMA schedule
+       [*]   Automatically enable NUMA aware memory/task placement (NEW)
+
+
+    [*] Namespaces support  --->
+
+    [*] Configure standard kernel features (expert users)  --->
+
+  [*] Enable loadable module support  --->
+    [ ]   Forced module loading
+    [*]   Module unloading
+    [*]     Forced module unloading
+    [*]   Module versioning support
+    [ ]   Source checksum for all modules (NEW)
+    [ ]   Module signature verification (NEW)
+
+  -*- Enable the block layer  --->
+    IO Schedulers  --->
+       <*> Deadline I/O scheduler
+       <*> CFQ I/O scheduler
+       Default I/O scheduler (deadline)  ---> ※SSDの場合は deadlineで。No-opにすると速いが大きなファイルの読み書きで他のタスクに影響が出る HDDの場合はCFQのままで。
+
+  Processor type and features  --->
+    [*] Linux guest support  --->
+      [*]   Enable paravirtualization code ※KVM Guest
+      [*]     Paravirtualization layer for spinlocks ※KVM Guest
+      [ ]     Xen guest support
+      [*]   KVM Guest support (including kvmclock) ※KVM Guest
+      [*]   Paravirtual steal time accounting
+
+    Processor family (Generic-x86-64)  --->
+     (X) Core 2/newer Xeon
+
+    [*] Supported processor vendors  --->
+        [*]   Support Intel processors
+
+    [*] Enable Maximum number of SMP Processors and NUMA Nodes
+
+    <*> CPU microcode loading support ※ CPUのマイクロコードアップデートに必要
+    [*]   Intel microcode loading support ※ CPUのマイクロコードアップデートに必要
+    [*] Numa Memory Allocation and Scheduler Support
+    [*]   Old style AMD Opteron NUMA detection
+    [*]   ACPI NUMA detection
+
+    [*] Enable KSM for page merging ※ KVM 使用時にメモリ圧縮の為に ksm/ksmtuned サービスと一緒に使う
+
+    [*] EFI runtime service support ※ UEFI起動に必要
+    [*]   EFI stub support ※ UEFI起動に必要
+    [ ]     EFI mixed-mode support ※ 不要
+
+  [*] Networking support  --->
+    Networking options  --->
+      -*- TCP/IP networking
+      <M>   IP: AH transformation ※iptables
+      <M>   IP: ESP transformation ※iptables
+      <M>   IP: IPComp transformation ※iptables
+      <*>   IP: IPsec transport mode ※iptables
+      <*>   IP: IPsec tunnel mode ※iptables
+      <M>   IP: IPsec BEET mode ※iptables
+      <*>   Large Receive Offload (ipv4/tcp) (NEW) ※iptables
+      <*>   INET: socket monitoring interface ※iptables
+      <M>     UDP: socket monitoring interface ※iptables
+      <*>   The IPv6 protocol  ---> ※iptables
+      [*] Network packet filtering framework (Netfilter)  ---> ※iptables
+        [*]   Advanced netfilter configuration
+              Core Netfilter Configuration  ---> ※iptables
+                <*>   nfmark target and match support
+                <*>   ctmark target and match support
+                <*>   CHECKSUM target support
+                <*>   "addrtype" address type match support
+                <*>   "comment" match support
+                <*>   "conntrack" connection tracking match support
+                <*>   "hl" hoplimit/TTL match support
+                <*>   "iprange" address range match support
+                <*>   "length" match support
+                <*>   "limit" match support
+                <*>   "mac" address match support
+                <*>   "multiport" Multiple port match support
+             IP: Netfilter Configuration  --->
+                <*> IP tables support (required for filtering/masq/NAT)
+                <*>   "ah" match support
+                <*>   "ecn" match support
+                <*>   "rpfilter" reverse path filter match support
+                <*>   "ttl" match support
+                <*>   IPv4 NAT
+                <*>     MASQUERADE target support
+                <*>     NETMAP target support
+                <*>     REDIRECT target suppor
+                <*> ARP tables support
+                <*>   ARP packet filtering
+                <*>   ARP payload mangling
+        <*>   Ethernet Bridge tables (ebtables) support  ---> ※802.1d Ethernet Bridgingを先にチェック
+          <*>   ebt: mark target support
+      <*> 802.1d Ethernet Bridging ※VMが使用するインターフェースブリッジで使用
+      [*]   IGMP/MLD snooping (NEW)
+      [*]   VLAN filtering
+      <*> 802.1Q/802.1ad VLAN Support ※VMが使用するインターフェースブリッジで使用
+      [*]   GVRP (GARP VLAN Registration Protocol) support ※VMが使用するインターフェースブリッジで使用
+      [*]   MVRP (Multiple VLAN Registration Protocol) support ※VMが使用するインターフェースブリッジで使用
+    [ ]   Amateur Radio support  --->
+    < >   RF switch subsystem support  --->
+    <*>   Plan 9 Resource Sharing Support (9P2000)  --->  ※KVMゲスト VirtFSに必要 Virtualization driversを先にチェック
+      <*>   9P Virtio Transport  ※KVMゲスト VirtFSに必要 Virtualization driversを先にチェック
+    <*>   CAIF support  --->
+
+  Device Drivers  --->
+    [*] Block devices  --->
+      <*>   DRBD Distributed Replicated Block Device support ※DRBDを使う場合
+      [*]     DRBD fault injection ※DRBDを使う場合
+      <*>   Virtio block driver ※KVMゲスト必須 Virtio driversを先にチェック
+
+    SCSI device support  --->
+      [*] SCSI low-level drivers  ---> ※サーバでLSIのRAIDカードを使っている場合
+          [*]   LSI Logic New Generation RAID Device Drivers
+          <*>     LSI Logic Management Module (New Driver)
+          <*>       LSI Logic MegaRAID Driver (New Driver)
+          <*>   LSI Logic Legacy MegaRAID Driver
+          <*>   LSI Logic MegaRAID SAS RAID Module
+          <*>   virtio-scsi support (EXPERIMENTAL) ※KVMゲスト
+
+    [*] Multiple devices driver support (RAID and LVM)  ---> ※LVMを使う場合
+      <*>   Device mapper support
+      <*>     Crypt target support
+      <*>     Snapshot target
+      <*>     Thin provisioning target
+      <*>     Mirror target
+      <*>   Multipath target
+         <*>     I/O Path Selector based on the number of in-flight I/Os
+         <*>     I/O Path Selector based on the service time
+
+    [*] Network device support  --->
+      <M>   Bonding driver support ※複数のインターフェースをまとめる場合
+      <M>     Ethernet team driver support  --->
+               <M>   Broadcast mode support
+               <M>   Round-robin mode support
+               <M>   Random mode support
+               <M>   Active-backup mode support
+               <M>   Load-balance mode support
+      <*>     MAC-VLAN support ※KVMホスト
+      <*>       MAC-VLAN based tap driver ※KVMホスト
+      <*>   Universal TUN/TAP device driver support ※KVMホスト
+      <*>     Virtio network driver ※KVMゲスト 必須
+      <*>   CAIF virtio transport driver ※KVMホスト 先に Networking support ->  CAIF support をチェックする必要あり
+        <*>     Host kernel accelerator for virtio net ※KVMホスト
+      [*]   Ethernet driver support  ---> ※必要に応じて
+          [*]   Broadcom devices
+          {*}   Broadcom NetXtremeII support
+
+    Character devices  --->
+      <*> Virtio console  ※KVMゲスト device virtio-serial を使ったシリアル接続をする時に必要 libvirtのシリアル接続には不要
+      <*> Hardware Random Number Generator Core support  --->
+          <*>   VirtIO Random Number Generator support※KVMゲスト
+      Serial drivers  --->
+        <*> 8250/16550 and compatible serial support ※シリアル接続に必要
+        [*]   Console on 8250/16550 and compatible serial port ※シリアル接続に必要
+
+    Graphics support  --->
+        Direct Rendering Manager  --->
+            <*> Kernel modesetting driver for MGA G200 server engines ※サーバのグラフィックカードで使われている事が多い lspciの結果を見る
+            <*> ATI Radeon
+              [*]   Enable userspace modesetting on radeon (DEPRECATED)
+        <*> Cirrus driver for QEMU emulated device
+        < > Virtio GPU driver
+
+    [*] DMA Engine support  --->
+       <*>   Intel I/OAT DMA support
+
+    [*] Virtualization drivers  ---> ※KVMゲスト 先にチェックする
+    Virtio drivers  ---> ※KVMゲスト
+      <*> PCI driver for virtio devices ※KVMゲスト
+      [*]   Support for legacy virtio draft 0.9.X and older devices
+      <*> Virtio balloon driver ※KVMゲスト
+      <*> Virtio input driver ※KVMゲスト
+      <*> Platform bus driver for memory mapped virtio devices ※KVMゲスト
+      [*]   Memory mapped virtio devices parameter parsing ※KVMゲスト
+
+  Firmware Drivers  --->
+    <*> BIOS update support for DELL systems via sysfs ※DELL機のみ
+    <*> Dell Systems Management Base Driver ※DELL機のみ
+    EFI (Extensible Firmware Interface) Support  --->
+        < > EFI Variable Support via sysfs            ※ UEFIブートに不要
+
+  File systems  --->
+    [*]   Ext3 extended attributes (NEW)
+    <*> The Extended 4 (ext4) filesystem
+      [*]   Use ext4 for ext2/ext3 file systems
+      [*]   Ext4 POSIX Access Control Lists
+      [*]   Ext4 Security Labels ※KVMホスト
+    <*> XFS filesystem support
+     [*]   XFS Quota support
+     [*]   XFS POSIX ACL support
+     [*]   XFS Realtime subvolume support
+     [*]   XFS Verbose Warnings
+    <*> Btrfs filesystem support
+     [*]   Btrfs POSIX Access Control Lists
+
+
+    [*] Dnotify support ※NFSを利用する時に必要
+    [*] Network File Systems  --->
+       <*>     NFS client support for NFS version 4
+       [*]   NFS client support for NFSv4.1
+       <*>   NFS server support ※NFSサーバを構築する場合
+       -*-     NFS server support for NFS version 3
+       [*]     NFS server support for NFS version 4
+       [*]       Provide Security Label support for NFSv4 server
+       <*>   Plan 9 Resource Sharing Support (9P2000) ※KVMゲスト VirtFS
+       [*]     9P POSIX Access Control Lists ※KVMゲスト VirtFS
+       [*]     9P Security Labels ※KVMゲスト VirtFS
+
+
+  Security options  --->
+    [ ] Enable different security models
+
+  -*- Cryptographic API  --->
+    <*>   CRC32c INTEL hardware acceleration
+    <*>   GHASH digest algorithm (CLMUL-NI accelerated)
+    <*>   AES cipher algorithms (x86_64)
+
+  [*] Virtualization  --->
+     <*>   Kernel-based Virtual Machine (KVM) support ※KVMホスト
+       <*>     KVM for Intel processors support ※KVMホスト
+       < >     KVM for AMD processors support
+       [ ]     Audit KVM MMU (NEW)
+       [*]     KVM legacy PCI device assignment support (NEW) ※KVMホスト
+       <*>   Host kernel accelerator for virtio net ※KVMホスト
+
+
