@@ -10,9 +10,3 @@ Here is a list of most recent posts:
    :category: Manual
    :format: {title}
    :sort:
-
-.. toctree::
-   :hidden:
-
-   about
-
