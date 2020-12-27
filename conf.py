@@ -23,7 +23,7 @@ blog_title = u'星のダンスを見においで'
 
 # Base URL for the website, required for generating feeds.
 # e.g. blog_baseurl = "http://example.com/"
-blog_baseurl = u'http://blog.usaturn.net/'
+blog_baseurl = u'https://blog.usaturn.net/'
 
 # Choose to archive only post titles. Archiving only titles can speed
 # up project building.
@@ -189,7 +189,7 @@ master_doc = 'contents/index'
 
 # General information about the project.
 project = u'星のダンスを見においで'
-copyright = u'2016, usaturn'
+copyright = u'2016～2021, usaturn'
 author = u'usaturn'
 
 # The version info for the project you're documenting, acts as replacement for
