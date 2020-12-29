@@ -4,9 +4,8 @@
 
 Here is a list of most recent posts:
 
-.. postlist:: 5
-   :excerpts:
+.. postlist:: 100
    :list-style: disk
    :category: Manual
-   :format: {title}
-   :sort:
+   :format: {date} {title}
+   :date: %Y/%m/%d

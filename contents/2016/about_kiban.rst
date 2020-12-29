@@ -1,6 +1,6 @@
-.. post:: Sep 11, 2016
+.. post:: 2016-09-11
    :tags: VIDEOGAME
-   :category:
+   :category: Other
    :author: usaturn
    :location: Japan
    :language: ja

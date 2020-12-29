@@ -1,4 +1,4 @@
-.. post:: Dec 12, 2016
+.. post:: 2016-12-12
    :tags: Gentoo, Linux
    :category: Linux
    :author: usaturn

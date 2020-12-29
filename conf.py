@@ -98,8 +98,10 @@ post_date_format = '%Y/%m/%d'
 # sidebars that link to author and location archive pages.
 html_sidebars = {
     '**': [ 'about.html',
-            'postcard.html', 'navigation.html',
-            'recentposts.html', 'tagcloud.html',
+            'postcard.html',
+            #'navigation.html',
+            #'recentposts.html',
+            'tagcloud.html',
             'categories.html',  'archives.html',
             'searchbox.html',
             ],

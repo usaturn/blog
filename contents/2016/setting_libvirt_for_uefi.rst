@@ -1,4 +1,4 @@
-.. post:: Sep 04, 2016
+.. post:: 2016-09-04
    :tags: KVM, Linux, QEMU, libvirt
    :category: VIRTUAL
    :author: usaturn

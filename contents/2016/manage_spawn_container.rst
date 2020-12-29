@@ -1,4 +1,4 @@
-.. post:: Dec 13, 2016
+.. post:: 2016-12-13
    :tags: Gentoo, Linux, container
    :category: Linux
    :author: usaturn

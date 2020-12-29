@@ -1,4 +1,4 @@
-.. post:: Sep 03, 2016
+.. post:: 2016-09-03
    :tags: KVM, Linux, QEMU
    :category: VIRTUAL
    :author: usaturn
