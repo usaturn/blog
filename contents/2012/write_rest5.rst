@@ -50,4 +50,4 @@
 
 明日はSphinxドキュメントを構造化する重要な `toctree <http://sphinx-users.jp/doc10/markup/toctree.html>`_ ディレクティブについて説明します。
 
-※ このアドベントカレンダーについては :ref:`about` を参照して下さい。
+※ このアドベントカレンダーについては :ref:`at_the_beginning` を参照して下さい。

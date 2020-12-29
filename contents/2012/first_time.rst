@@ -130,4 +130,4 @@ Sphinxのインストール
 .. note::  他に、 `@GoingMyWayNetさん <https://twitter.com/GoingMyWayNet>`_ の書かれた `Sphinx on windows (Admin権限なし版) <http://note.sicafe.net/sphinx_memo/installAtWinNoAdmin.html>`_ も非常に参考になります。
 
 
-※ このアドベントカレンダーについては :ref:`about` を参照して下さい。
+※ このアドベントカレンダーについては :ref:`at_the_beginning` を参照して下さい。
