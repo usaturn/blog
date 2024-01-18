@@ -113,10 +113,10 @@ post_auto_orphan = True
 # sidebars that link to author and location archive pages.
 html_sidebars = {
     "**": [
-        'about.html',
+        "about.html",
         "ablog/postcard.html",
-        #"navigation.html",
-        #"ablog/recentposts.html",
+        # "navigation.html",
+        # "ablog/recentposts.html",
         "ablog/tagcloud.html",
         "ablog/categories.html",
         "ablog/archives.html",
@@ -183,10 +183,10 @@ fontawesome_link_cdn = True
 
 # You can enable Disqus_ by setting ``disqus_shortname`` variable.
 # Disqus_ short name for the blog.
-#disqus_shortname = 'usaturn'
+# disqus_shortname = 'usaturn'
 
 # Choose to disqus pages that are not posts, default is ``False``.
-#disqus_pages = True
+# disqus_pages = True
 
 # Choose to disqus posts that are drafts (without a published date),
 # default is ``False``.
@@ -218,9 +218,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = u'星のダンスを見においで'
-copyright = u'2012～2023, usaturn'
-author = u'usaturn'
+project = "星のダンスを見においで"
+copyright = "2012～2023, usaturn"
+author = "usaturn"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -301,12 +301,12 @@ html_theme_path = [alabaster.get_path()]
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = 'images/usaturn_logo.png'
+html_logo = "images/usaturn_logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = 'images/usaturn_icon.png'
+html_favicon = "images/usaturn_icon.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -320,7 +320,7 @@ html_static_path = ["_static"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = '%Y/%m/%d'
+html_last_updated_fmt = "%Y/%m/%d"
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -360,7 +360,7 @@ html_last_updated_fmt = '%Y/%m/%d'
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
-html_search_language = 'ja'
+html_search_language = "ja"
 
 # A dictionary with options for the search language support, empty by default.
 # Now only 'ja' uses this config value
