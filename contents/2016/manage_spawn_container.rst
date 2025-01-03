@@ -12,7 +12,7 @@ systemd-nspawn コンテナを便利に使おう
 
 
 eix-update の定期実行
----------------------
+=====================
 eix-update を実行するユニット *eixupdate.service* を作成する ::
 
     vim /etc/systemd/system/eixupdate.service
