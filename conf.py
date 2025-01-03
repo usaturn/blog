@@ -220,7 +220,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "星のダンスを見においで"
-copyright = "2012～2024, usaturn"
+copyright = "2012～2025, usaturn"
 author = "usaturn"
 
 # The version info for the project you're documenting, acts as replacement for
