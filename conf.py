@@ -206,6 +206,7 @@ extensions = [
     "sphinx.ext.todo",
     "alabaster",
     "ablog",
+    "sphinx_copybutton",
 ]
 
 # The suffix(es) of source filenames.
@@ -372,3 +373,47 @@ html_search_language = "ja"
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = "usaturnblogdoc"
+
+# -- directive/role definition ------------------------------------------------>
+from docutils.parsers.rst.directives.admonitions import BaseAdmonition
+from docutils import nodes
+
+
+class NamedNoteDirective(BaseAdmonition):
+    node_class = nodes.admonition
+    css_class = 'note'
+    #required_arguments = 1
+    required_arguments = 0
+    optional_arguments = 1
+
+    def run(self):
+        title = u''
+        if self.arguments:
+            title += self.arguments[0]
+
+        if 'class' in self.options:
+            self.options['class'].append(self.css_class)
+        else:
+            self.options['class'] = [self.css_class]
+
+
+        node = self.node_class('\n'.join(self.content))
+        node += nodes.title(title, title)
+        node['classes'] += self.options['class']
+        node['name'] = self.name
+        self.state.nested_parse(self.content, self.content_offset, node)
+
+        return [node]
+
+
+class ColumnDirective(NamedNoteDirective):
+    css_class = 'column'
+
+
+def setup(app):
+    #app.add_stylesheet('custom.css')
+    app.add_css_file('custom.css')
+
+    app.add_directive('column', ColumnDirective)
+
+trimblank_keep_alnum_blank = ['html', 'singlehtml']
