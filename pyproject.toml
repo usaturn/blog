@@ -1,0 +1,13 @@
+[project]
+name = "blog"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ablog>=0.11.12",
+    "pillow>=11.1.0",
+    "sphinx>=8.1.3",
+    "sphinx-copybutton>=0.5.2",
+    "sphinxcontrib-trimblank>=1.0.3",
+]
