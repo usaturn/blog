@@ -11,6 +11,8 @@
 resonite ヘッドレスサーバを Google Cloud で建てるオススメ
 =========================================================
 
+`(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 2日目の記事です
+
 この記事は resonite_ の
 `Headless Client(通称ヘッドレスサーバと呼ばれている為、以下ヘッドレスサーバと記載します) <https://wiki.resonite.com/Headless_Client>`__
 を動かすなら `Google Cloud`_ がオススメだよ、という内容です。
@@ -32,7 +34,10 @@ resonite ヘッドレスサーバを Google Cloud で建てるオススメ
 - クラウドの安定した十分な帯域の回線を利用できます
 - スケジュールを設定して自動起動／自動停止ができます
 
-逆にデメリットとして、価格が高いので常時起動には向いていない、ある程度学習が必要といったことが挙げられます。
+逆にデメリットとして、下記が挙げられます。
+
+- 価格が高めで使っただけ請求される従量課金のため、常時起動には向きません
+- ある程度学習が必要です
 
 `Google Cloud`_ を推す理由
 ==========================
@@ -49,6 +54,7 @@ resonite ヘッドレスサーバを Google Cloud で建てるオススメ
 - `Google Cloud`_ のネットワーク上に構築であれば、最低でも 7Gbps という十分な帯域が確保できます
 - 起動中のヘッドレスサーバに接続して対話シェルを操作できます
 - インスタンス停止時にヘッドレスサーバの config を書き換えることができます
+- 一度に同様の構成のサーバを複数台用意することができます
 
 セキュリティに配慮しやすいです。
 
@@ -77,8 +83,4 @@ resonite ヘッドレスサーバを Google Cloud で建てるオススメ
 
 :ref:`明日の記事 <set_up_a_resonite_headless_server_on_compute_engine>` へ続きます。
 
-.. _Google Cloud: https://console.cloud.google.com/welcome
-.. _Google Cloud Shell: https://cloud.google.com/shell/docs
-.. _resonite: https://store.steampowered.com/app/2519830/Resonite/
-.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
-
+.. include:: /contents/include_files/resonite_headless_link.txt

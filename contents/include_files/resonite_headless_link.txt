@@ -1,0 +1,8 @@
+.. _Google Cloud: https://console.cloud.google.com/welcome
+.. _Google Cloud Shell: https://cloud.google.com/shell/docs
+.. _resonite: https://store.steampowered.com/app/2519830/Resonite/
+.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
+.. _ヘッドレスサーバ: https://wiki.resonite.com/Headless_Client
+.. _シークレット: https://cloud.google.com/security/products/secret-manager
+.. _マシンイメージ: https://cloud.google.com/compute/docs/machine-images/create-machine-images
+

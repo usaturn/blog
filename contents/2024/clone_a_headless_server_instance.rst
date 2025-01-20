@@ -11,6 +11,8 @@
 resonite ヘッドレスサーバの GCE インスタンスを複製しよう
 ========================================================
 
+`(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 8日目の記事です
+
 この記事では :ref:`set_up_a_resonite_headless_server_on_compute_engine` で構築した ヘッドレスサーバ_ を複製します。
 同様の ヘッドレスサーバ_ を複数台準備したい時に便利な手順です
 
@@ -23,6 +25,13 @@ resonite ヘッドレスサーバの GCE インスタンスを複製しよう
 
 #. ヘッドレスサーバ_ の ``Config.Json`` を シークレット_ に格納する
 #. GCE インスタンスのマシンイメージを作成し、マシンイメージから新規インスタンスを構築する
+
+インフラ設定用の環境変数を設定する
+==================================
+
+環境変数を読み込み、出力結果が正しいことを確認します（空欄がなければ良いです） ::
+
+    reso
 
 ``Config.Json`` を シークレット_ に格納する
 ===========================================
@@ -138,13 +147,7 @@ GCE インスタンス内部からシークレットへアクセスできるよ�
        # マシンイメージを変数に入れる
        MACHINE_IMAGE_NAME=$(gcloud compute machine-images list --format="value(name)"|fzf)
 
-:ref:`明日の記事 <about_operating_a_resonite_headless_server_on_gce_for_one_year>` へ続きます。
+:ref:`明日の記事 <check_the_price_and_choose_an_instance>` へ続きます。
 
-.. _Google Cloud: https://console.cloud.google.com/welcome
-.. _Google Cloud Shell: https://cloud.google.com/shell/docs
-.. _resonite: https://store.steampowered.com/app/2519830/Resonite/
-.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
-.. _シークレット: https://cloud.google.com/security/products/secret-manager
-.. _ヘッドレスサーバ: https://wiki.resonite.com/Headless_Client
-.. _マシンイメージ: https://cloud.google.com/compute/docs/machine-images/create-machine-images
+.. include:: /contents/include_files/resonite_headless_link.txt
 

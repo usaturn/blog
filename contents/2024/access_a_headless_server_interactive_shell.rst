@@ -11,6 +11,8 @@
 GCE インスタンスの resonite ヘッドレスサーバ対話シェルにアクセスしよう
 ======================================================================
 
+`(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 5日目の記事です
+
 この記事では :ref:`set_up_a_resonite_headless_server_on_compute_engine` で構築した ヘッドレスサーバ_ について以下を実施します
 
 - GCE インスタンスの起動／停止
@@ -25,32 +27,9 @@ GCE インスタンスの resonite ヘッドレスサーバ対話シェルにア
 インフラ設定用の環境変数を設定する
 ==================================
 
-環境変数を読み込みます ::
+環境変数を読み込み、出力結果が正しいことを確認します（空欄がなければ良いです） ::
 
-    source ~/resonite-headless-infra/scripts/env-headless-server.bash
-
-環境変数が設定されたことを確認します ::
-
-    echo -e \
-        "RESONITE_HEADLESS_ENVIRONMENT\t\t=\t${RESONITE_HEADLESS_ENVIRONMENT}"\\n\
-        "VPC_NAME\t\t\t\t=\t${VPC_NAME}"\\n\
-        "SUBNET_NAME\t\t\t\t=\t${SUBNET_NAME}"\\n\
-        "REGION\t\t\t\t\t=\t${REGION}"\\n\
-        "SUBNET_RANGE\t\t\t\t=\t${SUBNET_RANGE}"\\n\
-        "RESONITE_HEADLESS_SERVER_INSTANCE_NAME\t=\t${RESONITE_HEADLESS_SERVER_INSTANCE_NAME}"\\n\
-        "IMAGE_PROJECT\t\t\t\t=\t${IMAGE_PROJECT}"\\n\
-        "IMAGE_FAMILY_SCOPE\t\t\t=\t${IMAGE_FAMILY_SCOPE}"\\n\
-        "IMAGE_FAMILY\t\t\t\t=\t${IMAGE_FAMILY}"\\n\
-        "ZONE\t\t\t\t\t=\t${ZONE}"\\n\
-        "SETUP_RESONITE_HEADLESS_SERVER_SCRIPT\t=\t${SETUP_RESONITE_HEADLESS_SERVER_SCRIPT}"\\n\
-        "MACHINE_TYPE\t\t=\t${MACHINE_TYPE}"\\n\
-
-gcloud CLI の構成を設定します ::
-
-    PROJECT_NAME=$(gcloud config list --format="value(core.project)")
-    gcloud config set project ${PROJECT_NAME}
-    gcloud config set compute/zone ${ZONE}
-    gcloud config set compute/region ${REGION}
+    reso
 
 GCE インスタンスを起動／停止する
 ================================
@@ -165,7 +144,7 @@ GCE インスタンスが不要になったら削除しましょう ::
    .. code-block:: bash
 
        function gce-start(){
-           INSTANCE_NAME=$(gcloud compute instances list --filter="status=TERMINATED" --format="value(name)"|fzf)
+           INSTANCE_NAME=$(gcloud compute instances list --filter="status=TERMINATED" --format="value(name)"| fzf)
            if [ -n "${INSTANCE_NAME}" ]; then
                ZONE=$(gcloud compute instances list --filter="name=${INSTANCE_NAME}" --format="value(zone)")
                gcloud compute instances start ${INSTANCE_NAME} --zone=${ZONE}
@@ -176,7 +155,7 @@ GCE インスタンスが不要になったら削除しましょう ::
        }
 
        function gce-stop(){
-           INSTANCE_NAME=$(gcloud compute instances list --filter="status=RUNNING" --format="value(name)"|fzf)
+           INSTANCE_NAME=$(gcloud compute instances list --filter="status=RUNNING" --format="value(name)"| fzf)
            if [ -n "${INSTANCE_NAME}" ]; then
                ZONE=$(gcloud compute instances list --filter="name=${INSTANCE_NAME}" --format="value(zone)")
                gcloud compute instances stop ${INSTANCE_NAME} --zone=${ZONE}
@@ -187,7 +166,7 @@ GCE インスタンスが不要になったら削除しましょう ::
        }
 
        function gce-ssh(){
-           INSTANCE_NAME=$(gcloud compute instances list --filter="status=RUNNING" --format="value(name)"|fzf)
+           INSTANCE_NAME=$(gcloud compute instances list --filter="status=RUNNING" --format="value(name)"| fzf)
            if [ -n "${INSTANCE_NAME}" ]; then
                ZONE=$(gcloud compute instances list --filter="name=${INSTANCE_NAME}" --format="value(zone)")
                gcloud compute ssh --tunnel-through-iap ${INSTANCE_NAME} --zone=${ZONE}
@@ -211,11 +190,5 @@ GCE インスタンスが不要になったら削除しましょう ::
 
 :ref:`明日の記事 <update_a_resonite_headless_server_config>` へ続きます。
 
-.. _Google Cloud: https://console.cloud.google.com/welcome
-.. _Google Cloud Shell: https://cloud.google.com/shell/docs
-.. _resonite: https://store.steampowered.com/app/2519830/resonite/
-.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
-.. _ヘッドレスサーバ: https://wiki.resonite.com/Headless_Client
-.. _シークレット: https://cloud.google.com/security/products/secret-manager
-.. _マシンイメージ: https://cloud.google.com/compute/docs/machine-images/create-machine-images
+.. include:: /contents/include_files/resonite_headless_link.txt
 

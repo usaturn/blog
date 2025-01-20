@@ -11,6 +11,8 @@
 Google Cloud で resonite ヘッドレスサーバ を構築する ～解説編～
 ===============================================================
 
+`(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 4日目の記事です
+
 この記事は :ref:`set_up_a_resonite_headless_server_on_compute_engine` で使用したチュートリアルをブログで確認する目的で書き起こしています。
 一部、補足説明を入れました。
 
@@ -39,21 +41,25 @@ Google Cloud で resonite ヘッドレスサーバ を構築する ～解説編�
 
     source ~/resonite-headless-infra/scripts/env-headless-server.bash
 
-環境変数が設定されたことを確認します ::
+環境変数が設定されたことを確認します
 
-    echo -e \
-        "RESONITE_HEADLESS_ENVIRONMENT\t\t=\t${RESONITE_HEADLESS_ENVIRONMENT}"\\n\
-        "VPC_NAME\t\t\t\t=\t${VPC_NAME}"\\n\
-        "SUBNET_NAME\t\t\t\t=\t${SUBNET_NAME}"\\n\
-        "REGION\t\t\t\t\t=\t${REGION}"\\n\
-        "SUBNET_RANGE\t\t\t\t=\t${SUBNET_RANGE}"\\n\
-        "RESONITE_HEADLESS_SERVER_INSTANCE_NAME\t=\t${RESONITE_HEADLESS_SERVER_INSTANCE_NAME}"\\n\
-        "IMAGE_PROJECT\t\t\t\t=\t${IMAGE_PROJECT}"\\n\
-        "IMAGE_FAMILY_SCOPE\t\t\t=\t${IMAGE_FAMILY_SCOPE}"\\n\
-        "IMAGE_FAMILY\t\t\t\t=\t${IMAGE_FAMILY}"\\n\
-        "ZONE\t\t\t\t\t=\t${ZONE}"\\n\
-        "SETUP_RESONITE_HEADLESS_SERVER_SCRIPT\t=\t${SETUP_RESONITE_HEADLESS_SERVER_SCRIPT}"\\n\
-        "MACHINE_TYPE\t\t=\t${MACHINE_TYPE}"\\n\
+    ::
+
+        echo -e \
+            "RESONITE_HEADLESS_ENVIRONMENT\t\t=\t${RESONITE_HEADLESS_ENVIRONMENT}"\\n\
+            "VPC_NAME\t\t\t\t=\t${VPC_NAME}"\\n\
+            "SUBNET_NAME\t\t\t\t=\t${SUBNET_NAME}"\\n\
+            "REGION\t\t\t\t\t=\t${REGION}"\\n\
+            "SUBNET_RANGE\t\t\t\t=\t${SUBNET_RANGE}"\\n\
+            "RESONITE_HEADLESS_SERVER_INSTANCE_NAME\t=\t${RESONITE_HEADLESS_SERVER_INSTANCE_NAME}"\\n\
+            "IMAGE_PROJECT\t\t\t\t=\t${IMAGE_PROJECT}"\\n\
+            "IMAGE_FAMILY_SCOPE\t\t\t=\t${IMAGE_FAMILY_SCOPE}"\\n\
+            "IMAGE_FAMILY\t\t\t\t=\t${IMAGE_FAMILY}"\\n\
+            "ZONE\t\t\t\t\t=\t${ZONE}"\\n\
+            "SETUP_RESONITE_HEADLESS_SERVER_SCRIPT\t=\t${SETUP_RESONITE_HEADLESS_SERVER_SCRIPT}"\\n\
+            "MACHINE_TYPE\t\t\t\t=\t${MACHINE_TYPE}"\\n\
+
+    .. note:: source コマンドと echo コマンドは :command:`reso` を打つと同等の結果を得られます
 
 環境変数それぞれの意味を記載しておきます
 
@@ -366,9 +372,5 @@ resonite Headless Server 用インスタンスを作成する
 
 :ref:`明日の記事 <access_a_headless_server_interactive_shell>` へ続きます。
 
-.. _Google Cloud: https://console.cloud.google.com/welcome
-.. _Google Cloud Shell: https://cloud.google.com/shell/docs
-.. _resonite: https://store.steampowered.com/app/2519830/resonite/
-.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
-.. _ヘッドレスサーバ: https://wiki.resonite.com/Headless_Client
+.. include:: /contents/include_files/resonite_headless_link.txt
 

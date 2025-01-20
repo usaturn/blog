@@ -11,6 +11,8 @@
 Google Cloud で resonite ヘッドレスサーバ を構築する
 ====================================================
 
+`(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 3日目の記事です
+
 この記事は resonite_ の
 `Headless Client(通称ヘッドレスサーバと呼ばれている為、以下ヘッドレスサーバと記載します) <https://wiki.resonite.com/Headless_Client>`__
 を `Google Cloud`_ 上で動かす手順です。
@@ -126,26 +128,6 @@ resonite_ は開発スピードが速い為、基本的には最新情報を確�
 
           `Google Cloud Shell`_ に 120 日間アクセスしないと ${HOME} は初期化されてしまうので、初期化されてしまった場合は初めから設定仕直しする必要があります
 
-.. note:: `Google Cloud Shell`_ 手順がうまくいかなくなった、環境が壊れてしまったという場合は初期化し、手順を初めからやり直してください
-
-          #. 削除コマンドを打ちます ::
-
-              # 削除するファイルを確認する
-              ls -a $HOME
-
-              # ユーザディレクトリを削除する（全て消えるので注意）
-              sudo rm -rf $HOME
-
-          #. 右上の三点リーダーをクリックし、再起動をクリックします
-
-             .. figure:: images/restart_cloudshell.webp
-                :scale: 30%
-
-          #. 「VMの状態をクリーンにしたい」にチェックして再起動をクリックする
-
-             .. figure:: images/restart_cloudshell_param.webp
-                :scale: 30%
-
 Steamガードをオフにする
 -----------------------
 
@@ -199,11 +181,86 @@ Google Cloud にインフラを構築する
     # VPC を削除する
     gcloud compute networks delete ${VPC_NAME}
 
-.. _Google Cloud: https://console.cloud.google.com/welcome
-.. _Google Cloud Shell: https://cloud.google.com/shell/docs
-.. _resonite: https://store.steampowered.com/app/2519830/Resonite/
-.. _Secret Manager: https://cloud.google.com/security/products/secret-manager
-.. _ヘッドレスサーバ: https://wiki.resonite.com/Headless_Client
-.. _シークレット: https://cloud.google.com/security/products/secret-manager
-.. _マシンイメージ: https://cloud.google.com/compute/docs/machine-images/create-machine-images
+はじめからやり直す場合
+======================
+
+どうしても上手くいかず、どこかでミスっているのでは？と思った場合は、全ての環境を削除してまっさらな状態からやりなおしましょう
+
+`Google Cloud`_ のプロジェクトを削除する
+----------------------------------------
+
+`プロジェクトを削除する <https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=ja#shutting_down_projects>`__ ことで、これまで作成したクラウドリソースをすべて削除することができます
+
+プロジェクトの変数を初期化します ::
+
+    export CLOUDSDK_CORE_PROJECT=""
+
+削除するプロジェクト名を選択し変数にします ::
+
+    PROJECT_ID=$(gcloud projects list --format="value(projectId)"| fzf) && echo ${PROJECT_ID}
+
+プロジェクトを削除します ::
+
+    gcloud projects delete ${PROJECT_ID}
+
+.. note:: プロジェクトを削除した場合、すぐに削除されず 30 日間保存されています。
+          この間に削除を取り消しする場合は
+          `プロジェクトの復元をしてください <https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=ja#restoring_a_project>`__
+
+`Google Cloud`_ のプロジェクトを作成する
+----------------------------------------
+
+#. 任意の名前を変数にします ::
+
+    PROJECT_ID="使用可能な文字: 英小文字 (a-z)、数字 (0-9)、 ハイフン (-) ※英小文字で始まる必要がある"
+
+#. プロジェクトを作成します ::
+
+    gcloud projects create ${PROJECT_ID}
+
+#. 請求アカウントの紐づけの為に請求アカウントの名前を変数にします ::
+
+    BILLING_ACCOUNT_DISPLAY_NAME=$(gcloud billing accounts list --format="value(displayName)"| fzf) && echo ${BILLING_ACCOUNT_DISPLAY_NAME}
+
+#. 請求アカウントの ID を変数にします ::
+
+    BILLING_ACCOUNT_ID=$(gcloud billing accounts list --filter="displayName=${BILLING_ACCOUNT_DISPLAY_NAME}" --format="value(name)") && echo ${BILLING_ACCOUNT_ID}
+
+#. プロジェクト ID を変数にします ::
+
+    PROJECT_ID=$(gcloud config list --format="value(core.project)") && echo ${PROJECT_ID}
+
+#. 作成したプロジェクトに請求アカウントの紐づけをします ::
+
+    gcloud billing projects link ${PROJECT_ID} --billing-account=${BILLING_ACCOUNT_ID}
+
+**billingEnabled: true** と表示されたら、無事プロジェクトに請求アカウントが紐づいたことが確認できます
+
+`Google Cloud Shell`_ の環境を初期化する
+----------------------------------------
+
+`Google Cloud Shell`_ の環境がおかしくなった可能性がある場合は、`Google Cloud Shell`_ も初期化した上で 、 setup_cloud_shell_ から手順をやり直してください。
+問題なさそうであれば、 setup_cloud_shell_ は再実行しなくても良いです
+
+#. 削除コマンドを打ちます ::
+
+    # 削除するファイルを確認する
+    ls -a $HOME
+
+    # ユーザディレクトリを削除する（全て消えるので注意）
+    sudo rm -rf $HOME
+
+#. 右上の三点リーダーをクリックし、再起動をクリックします
+
+   .. figure:: images/restart_cloudshell.webp
+      :scale: 30%
+
+#. 「VMの状態をクリーンにしたい」にチェックして再起動をクリックする
+
+   .. figure:: images/restart_cloudshell_param.webp
+      :scale: 30%
+
+以上です
+
+.. include:: /contents/include_files/resonite_headless_link.txt
 
