@@ -310,9 +310,12 @@ runcmd ブロック
 その他
 ======
 
-本手順は、 `cloud-init <https://cloud-init.io/>`__ を利用するクラウドリソースを前提としていますが、自宅等の物理サーバで運用する場合も役に立つ部分があるかと思います。
+この記事は、 ヘッドレスサーバ_ がどのように起動しているのかを知って頂きたく執筆しました。
+自身でカスタマイズする際の手助けになればと思います。
 
-cloud-init を使わずとも、resonite-headless.service や start-resonite-headless.bash は Linux システムを利用する場合は有効かと思います。
+また、本手順は `cloud-init <https://cloud-init.io/>`__ を利用するクラウドリソースを前提としていますが、自宅等の物理サーバで運用する場合も役に立つ部分があるかもしれません。
+
+cloud-init を使わずとも、resonite-headless.service や start-resonite-headless.bash は Linux システムを利用する場合は有効な手段だと考えています。
 
 もっと良い方法があるよ！という方がいらっしゃれば是非フィートバックをお願いします。
 
