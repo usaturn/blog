@@ -1,6 +1,0 @@
-pip
-sphinx
-pillow
-sphinxcontrib-trimblank
-ablog
-sphinx-copybutton
