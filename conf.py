@@ -59,6 +59,8 @@ exclude_patterns = [
     "_website",
     ".superpowers",
     "README.rst",
+    "CLAUDE.md",
+    "tmp",
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
