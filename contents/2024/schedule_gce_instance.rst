@@ -1,15 +1,15 @@
-.. post:: 2024-12-07
-   :tags: Ubuntu, Linux, Resonite, VR
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _schedule_gce_instance:
 
 ==========================================
 GCE インスタンスのスケジュール設定をしよう
 ==========================================
+
+:maatlog-post: true
+:maatlog-published-at: 2024-12-07T00:00:00+09:00
+:maatlog-slug: schedule-gce-instance
+:maatlog-tags: ubuntu,linux,resonite,vr
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 7日目の記事です
 

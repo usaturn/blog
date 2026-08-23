@@ -1,15 +1,15 @@
-.. post:: 2024-12-10
-   :tags: Ubuntu, Linux, resonite, VR
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _explanation_of_setup_config:
 
 ========================
 setup-config.yaml の解説
 ========================
+
+:maatlog-post: true
+:maatlog-published-at: 2024-12-10T00:00:00+09:00
+:maatlog-slug: explanation-of-setup-config
+:maatlog-tags: ubuntu,linux,resonite,vr
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 10日目の記事です
 

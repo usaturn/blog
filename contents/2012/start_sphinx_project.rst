@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 2, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第2日目 Sphinxでドキュメント作成を開始する
 ===========================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-02T00:00:00+09:00
+:maatlog-slug: start-sphinx-project
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 2日目はドキュメント作成用のひな形となる **プロジェクト** を作成しhtmlを生成します。
 

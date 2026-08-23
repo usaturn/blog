@@ -1,15 +1,15 @@
-.. post:: 2024-12-03
-   :tags: Ubuntu, Linux, resonite, VR
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _set_up_a_resonite_headless_server_on_compute_engine:
 
 ====================================================
 Google Cloud で resonite ヘッドレスサーバ を構築する
 ====================================================
+
+:maatlog-post: true
+:maatlog-published-at: 2024-12-03T00:00:00+09:00
+:maatlog-slug: set-up-a-resonite-headless-server-on-compute-engine
+:maatlog-tags: ubuntu,linux,resonite,vr
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 3日目の記事です
 

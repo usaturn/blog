@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 1, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第1日目 Sphinx環境を構築しよう！
 =================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-01T00:00:00+09:00
+:maatlog-slug: first-time
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 初日は私が普段Windows上でどのようにSphinx環境を構築しているかをご紹介します。
 

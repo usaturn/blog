@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 8, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第8日目 Sphinxドキュメントを編集する その５
 ============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-08T00:00:00+09:00
+:maatlog-slug: write-rest5
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 昨日に引き続き **リテラルブロック (コードブロック)** 関連の説明です。
 

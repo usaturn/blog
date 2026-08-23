@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 11, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第11日目 Sphinxドキュメントを編集する その８
 =============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-11T00:00:00+09:00
+:maatlog-slug: write-rest8
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 .. highlight:: rest
 

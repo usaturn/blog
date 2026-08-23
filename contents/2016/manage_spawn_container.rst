@@ -1,15 +1,13 @@
-.. post:: 2016-12-13
-   :tags: Gentoo, Linux, container
-   :category: Linux
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 =====================================
 systemd-nspawn コンテナを便利に使おう
 =====================================
 
-
+:maatlog-post: true
+:maatlog-published-at: 2016-12-13T00:00:00+09:00
+:maatlog-slug: manage-spawn-container
+:maatlog-tags: gentoo,linux,container
+:maatlog-categories: linux
+:maatlog-authors: usaturn
 
 eix-update の定期実行
 =====================

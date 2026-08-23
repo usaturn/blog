@@ -1,16 +1,15 @@
-.. post:: 2024-11-30
-   :tags: Linux, CLI, Development
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _setup_mise:
 
 =======================
 mise をセットアップする
 =======================
 
+:maatlog-post: true
+:maatlog-published-at: 2024-11-30T00:00:00+09:00
+:maatlog-slug: setup-mise
+:maatlog-tags: linux,cli,development
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
 
 誰向けの記事？
 ==============
