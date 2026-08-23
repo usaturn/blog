@@ -1,5 +1,25 @@
 /* This file intentionally left blank. */
 
+/*
+ * maatlog does not strip the `:maatlog-*:` metadata field list (and, for
+ * articles that `.. include:: warning.rst` right after it, the `:orphan:`
+ * field list it carries) from the document tree after reading it, so those
+ * raw field lists render inside `.maatlog-post-body`, duplicating the
+ * already-formatted metadata shown in `.maatlog-post-meta` above it.
+ *
+ * The selector below only targets a `dl.field-list` that is a DIRECT child
+ * of the article's outermost `<section>` (i.e. the first block(s) right
+ * after the title, before any real body content begins) -- exactly where
+ * maatlog/the include fix places these injected field lists. Genuine
+ * field-list-like constructs written by hand inside article bodies (e.g.
+ * `contents/2012/first_time.rst`'s Windows PATH `:変数名:`/`:変数値:`
+ * listing) are always nested deeper (inside paragraphs/list items/
+ * subsections) and are unaffected by this rule.
+ */
+.maatlog-post-body > section > dl.field-list {
+    display: none;
+}
+
 body {
     background-color: #c0c0c0;
     color: #fff;

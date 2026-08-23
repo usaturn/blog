@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 6, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第6日目 Sphinxドキュメントを編集する その３
 ============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-06T00:00:00+09:00
+:maatlog-slug: write-rest3
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 今日のご紹介するのは **表 (テーブル)** の書き方です。
 

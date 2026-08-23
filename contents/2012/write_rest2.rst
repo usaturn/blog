@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 5, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第5日目 Sphinxドキュメントを編集する その２
 ============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-05T00:00:00+09:00
+:maatlog-slug: write-rest2
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 昨日は **reStructuredText** で記述されたサンプルをコピペし **HTMLドキュメント** を生成しましたね。
 今日は、サンプルの中で使用した **reStructuredText** の記法をご紹介します。

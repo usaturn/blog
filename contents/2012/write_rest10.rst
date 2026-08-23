@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 13, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第13日目 Sphinxドキュメントを編集する その１０
 ===============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-13T00:00:00+09:00
+:maatlog-slug: write-rest10
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 昨日は画像やファイルへのリンクについて説明しました。
 今日は **索引(インデックス)** について説明します。

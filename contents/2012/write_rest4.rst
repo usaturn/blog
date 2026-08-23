@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 7, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第7日目 Sphinxドキュメントを編集する その４
 ============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-07T00:00:00+09:00
+:maatlog-slug: write-rest4
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 今日ご紹介するのは **リテラルブロック (コードブロック)** の書き方です。
 

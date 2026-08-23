@@ -1,14 +1,13 @@
-.. post:: 2016-09-11
-   :tags: VIDEOGAME
-   :category: Other
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
-
 ========
 基板覚書
 ========
+
+:maatlog-post: true
+:maatlog-published-at: 2016-09-11T00:00:00+09:00
+:maatlog-slug: about-kiban
+:maatlog-tags: videogame
+:maatlog-categories: other
+:maatlog-authors: usaturn
 
 概要
 ====

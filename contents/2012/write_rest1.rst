@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 4, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第4日目 Sphinxドキュメントを編集する その１
 ============================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-04T00:00:00+09:00
+:maatlog-slug: write-rest1
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 今度こそ、Sphinxドキュメントの作成に入ります。
 

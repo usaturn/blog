@@ -1,14 +1,14 @@
-.. include:: warning.rst
-
-.. post:: Dec 3, 2012
-   :tags: sphinx
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 第3日目 Sphinxドキュメントを書く道具
 =====================================
+
+:maatlog-post: true
+:maatlog-published-at: 2012-12-03T00:00:00+09:00
+:maatlog-slug: writing-tool
+:maatlog-tags: sphinx
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
+
+.. include:: warning.rst
 
 昨日はプロジェクトを作成した直後にhtmlを生成できる事を確認しました。
 今日は、やっとSphinxドキュメントの作成に入ります・・・と思わせておいて、重要なテキストエディタについての説明をさせて下さい。

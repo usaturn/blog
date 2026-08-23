@@ -1,15 +1,15 @@
-.. post:: 2024-12-06
-   :tags: Ubuntu, Linux, resonite, VR
-   :category: "IT technology"
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _update_a_resonite_headless_server_config:
 
 =====================================================================
 GCE インスタンス上の resonite ヘッドレスサーバ の Config を更新しよう
 =====================================================================
+
+:maatlog-post: true
+:maatlog-published-at: 2024-12-06T00:00:00+09:00
+:maatlog-slug: update-a-resonite-headless-server-config
+:maatlog-tags: ubuntu,linux,resonite,vr
+:maatlog-categories: it-technology
+:maatlog-authors: usaturn
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 6日目の記事です
 

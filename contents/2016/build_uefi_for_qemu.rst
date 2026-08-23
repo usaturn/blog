@@ -1,16 +1,15 @@
-.. post:: 2016-09-03
-   :tags: KVM, Linux, QEMU
-   :category: VIRTUAL
-   :author: usaturn
-   :location: Japan
-   :language: ja
-
 .. _build_uefi_for_qemu:
 
 ===========================================
 QEMU の為の UEFI ファームウェアのビルド手順
 ===========================================
 
+:maatlog-post: true
+:maatlog-published-at: 2016-09-03T00:00:00+09:00
+:maatlog-slug: build-uefi-for-qemu
+:maatlog-tags: kvm,linux,qemu
+:maatlog-categories: virtualization
+:maatlog-authors: usaturn
 
 .. _OVMF.fd: http://www.tianocore.org/ovmf/
 
