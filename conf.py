@@ -57,6 +57,8 @@ exclude_patterns = [
     ".git",
     "__pycache__",
     "_website",
+    ".superpowers",
+    "README.rst",
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.

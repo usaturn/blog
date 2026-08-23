@@ -5,7 +5,7 @@
 .. maatlog:post-list::
    :limit: 100
 
-`すべての記事一覧はこちら </blog/index.html>`_
+`すべての記事一覧はこちら </blog.html>`_
 
 .. toctree::
    :hidden:
