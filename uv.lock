@@ -42,7 +42,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "maatlog" },
+    { name = "maatlog", path = "tmp/maatlog-0.0.0-py3-none-any.whl" },
     { name = "pillow" },
     { name = "sphinx" },
     { name = "sphinx-copybutton" },
@@ -202,15 +202,21 @@ wheels = [
 [[package]]
 name = "maatlog"
 version = "0.0.0"
-source = { registry = "https://pypi.org/simple" }
+source = { path = "tmp/maatlog-0.0.0-py3-none-any.whl" }
 dependencies = [
     { name = "myst-parser" },
     { name = "pydantic" },
     { name = "sphinx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8c/01/72c8500dbdacbdb2245b33b88d0aacd50d4ea02bb7beb7125b5b1855dfa3/maatlog-0.0.0.tar.gz", hash = "sha256:e7e8ae9fddb8959399ec5762defd5409c51f962cfd895fe7d019271c8ef8d3d7", size = 50453, upload-time = "2026-08-13T09:36:13.594Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/9f/e4fc3ee15d26d9ecc8f0ba116eee65b81f061fef017c98b809cabe85f7bd/maatlog-0.0.0-py3-none-any.whl", hash = "sha256:e2c4e40771459175b0e6f562091e19494e9425191dd1f0dce52f093feab10dcb", size = 66360, upload-time = "2026-08-13T09:36:12.4Z" },
+    { filename = "maatlog-0.0.0-py3-none-any.whl", hash = "sha256:e7f103de46066b9770e46f46c2ddb65d2dcadc5f297b55143638719b17175eb9" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "myst-parser", specifier = ">=5.1" },
+    { name = "pydantic", specifier = ">=2" },
+    { name = "sphinx", specifier = ">=9.1" },
 ]
 
 [[package]]
