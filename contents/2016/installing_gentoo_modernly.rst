@@ -1,13 +1,13 @@
-=================================================
-Gentoo Linux を sysytemd でインストールする（裏）
-=================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2016-12-11T00:00:00+09:00
 :maatlog-slug: installing-gentoo-modernly
 :maatlog-tags: gentoo,linux
 :maatlog-categories: linux
 :maatlog-authors: usaturn
+
+=================================================
+Gentoo Linux を sysytemd でインストールする（裏）
+=================================================
 
 概要
 ====

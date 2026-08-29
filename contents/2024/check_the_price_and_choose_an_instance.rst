@@ -1,15 +1,15 @@
-.. _check_the_price_and_choose_an_instance:
-
-====================================================
-ヘッドレスサーバ_ に使うマシンタイプの選び方と費用感
-====================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2024-12-09T00:00:00+09:00
 :maatlog-slug: check-the-price-and-choose-an-instance
 :maatlog-tags: ubuntu,linux,resonite,vr
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _check_the_price_and_choose_an_instance:
+
+====================================================
+ヘッドレスサーバ_ に使うマシンタイプの選び方と費用感
+====================================================
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 9日目の記事です
 

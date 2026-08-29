@@ -1,12 +1,12 @@
-第1日目 Sphinx環境を構築しよう！
-=================================
-
 :maatlog-post: true
 :maatlog-published-at: 2012-12-01T00:00:00+09:00
 :maatlog-slug: first-time
 :maatlog-tags: sphinx
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+第1日目 Sphinx環境を構築しよう！
+=================================
 
 .. include:: warning.rst
 

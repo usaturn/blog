@@ -1,15 +1,15 @@
-.. _access_a_headless_server_interactive_shell:
-
-======================================================================
-GCE インスタンスの resonite ヘッドレスサーバ対話シェルにアクセスしよう
-======================================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2024-12-05T00:00:00+09:00
 :maatlog-slug: access-a-headless-server-interactive-shell
 :maatlog-tags: ubuntu,linux,resonite,vr
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _access_a_headless_server_interactive_shell:
+
+======================================================================
+GCE インスタンスの resonite ヘッドレスサーバ対話シェルにアクセスしよう
+======================================================================
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 5日目の記事です
 

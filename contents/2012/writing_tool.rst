@@ -1,12 +1,12 @@
-第3日目 Sphinxドキュメントを書く道具
-=====================================
-
 :maatlog-post: true
 :maatlog-published-at: 2012-12-03T00:00:00+09:00
 :maatlog-slug: writing-tool
 :maatlog-tags: sphinx
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+第3日目 Sphinxドキュメントを書く道具
+=====================================
 
 .. include:: warning.rst
 
