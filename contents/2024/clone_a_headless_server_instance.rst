@@ -1,15 +1,15 @@
-.. _clone_a_headless_server_instance:
-
-========================================================
-resonite ヘッドレスサーバの GCE インスタンスを複製しよう
-========================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2024-12-08T00:00:00+09:00
 :maatlog-slug: clone-a-headless-server-instance
 :maatlog-tags: ubuntu,linux,resonite,vr
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _clone_a_headless_server_instance:
+
+========================================================
+resonite ヘッドレスサーバの GCE インスタンスを複製しよう
+========================================================
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 8日目の記事です
 

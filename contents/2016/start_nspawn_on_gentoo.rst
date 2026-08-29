@@ -1,13 +1,13 @@
-===================================
-Gentoo に systemd-nspawn を導入する
-===================================
-
 :maatlog-post: true
 :maatlog-published-at: 2016-12-12T00:00:00+09:00
 :maatlog-slug: start-nspawn-on-gentoo
 :maatlog-tags: gentoo,linux
 :maatlog-categories: linux
 :maatlog-authors: usaturn
+
+===================================
+Gentoo に systemd-nspawn を導入する
+===================================
 
 この記事は `Gentoo Advent Calendar 2016 <http://www.adventar.org/calendars/1493#list-2016-12-12>`_ の記事です。
 

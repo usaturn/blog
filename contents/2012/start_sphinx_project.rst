@@ -1,12 +1,12 @@
-第2日目 Sphinxでドキュメント作成を開始する
-===========================================
-
 :maatlog-post: true
 :maatlog-published-at: 2012-12-02T00:00:00+09:00
 :maatlog-slug: start-sphinx-project
 :maatlog-tags: sphinx
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+第2日目 Sphinxでドキュメント作成を開始する
+===========================================
 
 .. include:: warning.rst
 

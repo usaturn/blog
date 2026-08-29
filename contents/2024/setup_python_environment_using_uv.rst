@@ -1,15 +1,15 @@
-.. _setup_python_environment_using_uv:
-
-===========================================
-uv を利用した Python 環境のセットアップメモ
-===========================================
-
 :maatlog-post: true
 :maatlog-published-at: 2025-01-04T00:00:00+09:00
 :maatlog-slug: setup-python-environment-using-uv
 :maatlog-tags: linux,python
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _setup_python_environment_using_uv:
+
+===========================================
+uv を利用した Python 環境のセットアップメモ
+===========================================
 
 誰向けの記事？
 ==============

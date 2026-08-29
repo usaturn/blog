@@ -1,15 +1,15 @@
-.. _pyhack_snow_mountain_camp2024:
-
-=====================================
-Python mini hack-a-thon 雪山合宿 2024
-=====================================
-
 :maatlog-post: true
 :maatlog-published-at: 2024-01-24T00:00:00+09:00
 :maatlog-slug: pyhack-snow-mountain-camp
 :maatlog-tags: pyhack,python,sphinx,it-study-group,memo
 :maatlog-categories: misc
 :maatlog-authors: usaturn
+
+.. _pyhack_snow_mountain_camp2024:
+
+=====================================
+Python mini hack-a-thon 雪山合宿 2024
+=====================================
 
 Pyhack 備忘録
 =============

@@ -1,12 +1,12 @@
-本家 Sphinx Advent Calendar 2012 10日目 ～サクラエディタから make html～
-==========================================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2012-12-10T00:00:00+09:00
 :maatlog-slug: make-on-sakura
 :maatlog-tags: sphinx
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+本家 Sphinx Advent Calendar 2012 10日目 ～サクラエディタから make html～
+==========================================================================
 
 9日目の `波田野さん <http://www.jus.or.jp/~hatano/>`_ ( `@tcsh <https://twitter.com/tcsh>`_ )から受け取りました。
 

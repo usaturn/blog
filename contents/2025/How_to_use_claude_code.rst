@@ -1,15 +1,15 @@
-.. _How_to_use_claude_code:
-
-=====================================
-初心者が Claude Code を使い始めたメモ
-=====================================
-
 :maatlog-post: true
 :maatlog-published-at: 2025-06-28T00:00:00+09:00
 :maatlog-slug: how-to-use-claude-code
 :maatlog-tags: ai
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _How_to_use_claude_code:
+
+=====================================
+初心者が Claude Code を使い始めたメモ
+=====================================
 
 誰向けの記事？
 ==============

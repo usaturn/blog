@@ -1,12 +1,12 @@
-第13日目 Sphinxドキュメントを編集する その１０
-===============================================
-
 :maatlog-post: true
 :maatlog-published-at: 2012-12-13T00:00:00+09:00
 :maatlog-slug: write-rest10
 :maatlog-tags: sphinx
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+第13日目 Sphinxドキュメントを編集する その１０
+===============================================
 
 .. include:: warning.rst
 

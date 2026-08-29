@@ -1,13 +1,13 @@
-====================
-libvirt の UEFI 設定
-====================
-
 :maatlog-post: true
 :maatlog-published-at: 2016-09-04T00:00:00+09:00
 :maatlog-slug: setting-libvirt-for-uefi
 :maatlog-tags: kvm,linux,qemu,libvirt
 :maatlog-categories: virtualization
 :maatlog-authors: usaturn
+
+====================
+libvirt の UEFI 設定
+====================
 
 概要
 ====

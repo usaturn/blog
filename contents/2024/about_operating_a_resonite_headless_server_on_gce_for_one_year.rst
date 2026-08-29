@@ -1,15 +1,15 @@
-.. _about_operating_a_resonite_headless_server_on_gce_for_one_year:
-
-================================================================================
-Google Cloud Compute Engine で resonite ヘッドレスサーバを運用しての感想（駄文）
-================================================================================
-
 :maatlog-post: true
 :maatlog-published-at: 2024-12-11T00:00:00+09:00
 :maatlog-slug: about-operating-a-resonite-headless-server-on-gce-for-one-year
 :maatlog-tags: ubuntu,linux,resonite,vr
 :maatlog-categories: it-technology
 :maatlog-authors: usaturn
+
+.. _about_operating_a_resonite_headless_server_on_gce_for_one_year:
+
+================================================================================
+Google Cloud Compute Engine で resonite ヘッドレスサーバを運用しての感想（駄文）
+================================================================================
 
 `(2枚目) Resonite Advent Calendar 2024 <https://adventar.org/calendars/10544>`__ 11日目の記事です
 
