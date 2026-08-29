@@ -118,12 +118,6 @@ pi install npm:pi-mcp-adapter
 pi update
 uv run python scripts/add_pi_skills_setting.py
 
-echo "Installing gcloud..."
-curl https://sdk.cloud.google.com | bash -s -- --disable-prompts --install-dir=$HOME/google-cloud-sdk
-
-echo "Installing bun..."
-curl -fsSL https://bun.com/install | bash
-
 echo "Installing Starship..."
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 mkdir -p "${HOME}/.config"

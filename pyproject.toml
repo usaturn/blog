@@ -11,5 +11,10 @@ dependencies = [
     "sphinx-copybutton",
 ]
 
+[dependency-groups]
+dev = [
+    "sphinx-autobuild"
+]
+
 [tool.uv.sources]
 maatlog = { path = "tmp/maatlog-0.0.0-py3-none-any.whl" }
