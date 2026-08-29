@@ -47,7 +47,7 @@ if command -v yarn >/dev/null 2>&1; then
 fi
 export PATH
 
-alias gitm="git fetch -p && git checkout origin/master"
+alias gitm="git fetch -p && git checkout origin/main"
 alias gitc="git branch -a| fzf | xargs git checkout"
 alias gitd="git branch | fzf | xargs git branch -D"
 gits() {
