@@ -138,7 +138,7 @@ Google Cloud は Oracle Cloud のように無料で運用できるわけでは�
 :resonite ID: usaturn
 :VRChat ID: usaturn
 
-PS: 実は 1 年前のアドベントカレンダーに書きたかった内容を温めすぎていました。量が多いので腰が重かったですし、いったん書き始めてからも、かなりの工数がかかりました……
+PS: 実は 1 年前のアドベントカレンダーに書きたかった内容を温めすぎていました。量が多いので腰が重かったですし、いったん書き始めてからも、かなりの工数がかかりました。結局、ここまで書き終わったのが1月後半という……
 
 .. include:: /contents/include_files/resonite_headless_link.txt
 

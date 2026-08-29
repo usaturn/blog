@@ -41,4 +41,6 @@
    contents/2024/schedule_gce_instance
    contents/2024/set_up_a_resonite_headless_server_on_compute_engine
    contents/2024/setup_mise
+   contents/2024/setup_python_environment_using_uv
    contents/2024/update_a_resonite_headless_server_config
+   contents/2025/How_to_use_claude_code

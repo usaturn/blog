@@ -92,6 +92,7 @@ maatlog_tags = {
     "sphinx": "Sphinx",
     "it-study-group": "IT勉強会",
     "memo": "備忘録",
+    "ai": "AI",
 }
 
 maatlog_categories = {

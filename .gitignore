@@ -153,4 +153,6 @@ ENV/
 .ropeproject
 
 tmp/
+*.bak
+docs/
 

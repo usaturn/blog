@@ -95,9 +95,9 @@ GCE インスタンス内部からシークレットへアクセスできるよ�
 
 複製元のインスタンスから マシンイメージ_ を作成します
 
-#. 作成する マシンイメージ_ の名前を考えて変数にします（例: resonite_image） ::
+#. 作成する マシンイメージ_ の名前を考えて変数にします（例: resonite-image） ::
 
-    MACHINE_IMAGE_NAME=resonite_image
+    MACHINE_IMAGE_NAME=resonite-image
 
 #. インスタンスからマシンイメージを作成します ::
 
@@ -146,6 +146,115 @@ GCE インスタンス内部からシークレットへアクセスできるよ�
 
        # マシンイメージを変数に入れる
        MACHINE_IMAGE_NAME=$(gcloud compute machine-images list --format="value(name)"|fzf)
+
+       # 削除したインスタンス用のシークレットを削除する
+       NOT_REQUIRED_SECRET=$(gcloud secrets list --format="value(name)"|fzf) && echo ${NOT_REQUIRED_SECRET}
+       gcloud secrets delete ${NOT_REQUIRED_SECRET}
+
+
+同じマシンタイプでインスタンスを複数作成する際の注意事項
+========================================================
+
+上記の複製方法でインスタンスのクローンを作成していると、5個目を作成（及び起動）しようとしたところで、下記のようなエラーが出ます
+
+::
+
+    ERROR: (gcloud.compute.instances.create) Could not fetch resource:
+     - Quota 'T2D_CPUS' exceeded.  Limit: 8.0 in region asia-northeast1.
+            metric name = compute.googleapis.com/t2d_cpus
+            limit name = T2D-CPUS-per-project-region
+            limit = 8.0
+            dimensions = region: asia-northeast1
+    Try your request in another zone, or view documentation on how to increase quotas: https://cloud.google.com/compute/quotas.
+
+本手順で使っているマシンタイプ **t2d-standard-2** は 1台あたり 2 vCPU なので、
+リージョンあたりの ``T2D_CPUS`` の割り当て（初期値 8）を 4台で使い切ってしまうということのようです。
+対処方法は以下の3通りが考えられます
+
+別のリージョン・ゾーンで作成する
+--------------------------------
+
+割り当てはリージョン単位なので、別のリージョンのゾーンを指定すれば作成できます。
+指定できるゾーンは `リージョンとゾーン <https://cloud.google.com/compute/docs/regions-zones?hl=ja>`__ を参照してください（例: asia-northeast2（大阪）、asia-northeast3（ソウル）） ::
+
+    # 新しい ZONE でインスタンスを作成する
+    gcloud compute instances create ${RESONITE_HEADLESS_SERVER_INSTANCE_NAME} \
+        --machine-type ${MACHINE_TYPE} \
+        --source-machine-image=${MACHINE_IMAGE_NAME} \
+        --zone=${ZONE}
+
+    # Spot VM で作成する場合
+    gcloud compute instances create ${RESONITE_HEADLESS_SERVER_INSTANCE_NAME} \
+        --machine-type ${MACHINE_TYPE} \
+        --source-machine-image=${MACHINE_IMAGE_NAME} \
+        --provisioning-model=SPOT \
+        --instance-termination-action=STOP \
+        --maintenance-policy=TERMINATE
+
+別のマシンタイプを使用する
+--------------------------
+
+T2D 以外のマシンタイプは別の割り当てでカウントされるので、マシンタイプを変更する手もあります（例: c2-standard-4、c3-highcpu-4） ::
+
+    MACHINE_TYPE=c2-standard-4
+
+.. note:: Compute Optimized (C3) のマシンタイプは ``pd-standard`` のディスクと組み合わせられないようです。
+   ``pd-balanced`` や ``pd-ssd`` といった、より新しい永続ディスクタイプを指定してください
+
+       ::
+
+           ERROR: (gcloud.compute.instances.create) Could not fetch resource:
+            1. [pd-standard] features and [instance_type: VIRTUAL_MACHINE
+           family: COMPUTE_OPTIMIZED
+           generation: GEN_3
+           cpu_vendor: INTEL
+           architecture: X86_64
+           ] InstanceTaxonomies are not compatible for creating instance.
+
+割り当ての引き上げを申請する
+----------------------------
+
+#. Google Cloud コンソールの [IAM と管理] > [割り当て] に移動する
+#. 「T2D_CPUS」を検索する
+#. 該当する割り当てを選択し、[制限を編集] をクリックする
+#. 必要な値への引き上げを申請する
+
+Google による審査後（筆者の場合は1営業日程度でした）、承認されれば利用できるようになります
+
+複製したインスタンスで認証に失敗する場合
+========================================
+
+同じマシンイメージから作成した4台のインスタンスを起動して参加しようとすると、認証失敗で入れなくなる事象が再現できました。
+
+まず気になったのが :command:`hostnamectl` で表示される Machine ID で、複製した4台とも同じ値になっていました ::
+
+    hostnamectl
+    # 出力例（複製元・複製先とも同じ値になっている）
+    # Machine ID: 9791f922163f4d3688c0cad7aa903ef8
+
+複製したインスタンスでは、machine-id を削除して生成し直しておきます ::
+
+    # machine-id ファイルを削除して、新しい machine-id を生成する
+    sudo rm /etc/machine-id && sudo systemd-machine-id-setup
+
+そのうえで、ヘッドレスサーバ_ を停止して ``Resonite_Data`` を削除し、起動し直します ::
+
+    sudo systemctl stop resonite-headless.service && \
+    rm -rf ${HOME}/.local/share/Steam/steamapps/common/Resonite/Resonite_Data && \
+    sudo systemctl start resonite-headless.service
+
+筆者の環境では、上記のコマンドを1回ずつ打ったところ4台中3台は参加できるようになり、
+残りの1台も再度コマンドを打って参加をリトライしていたら、そのうち入れるようになりました。
+
+.. note:: サービスの状態確認・操作は下記の通りです
+
+       ::
+
+           systemctl status resonite-headless.service
+           sudo systemctl restart resonite-headless.service
+           sudo systemctl stop resonite-headless.service
+           sudo systemctl start resonite-headless.service
+
 
 :ref:`明日の記事 <check_the_price_and_choose_an_instance>` へ続きます。
 
