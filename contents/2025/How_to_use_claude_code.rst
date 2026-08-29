@@ -98,7 +98,7 @@ VSCode を起動して拡張 **Claude Code for VSCode** をインストールし
 - ターミナルから :command:`/ide` を打つと VSCode と連携する
 
 MCP Server と連携する
-====================
+=====================
 
 登録済みの MCP Server は :command:`claude mcp list` で確認できます ::
 

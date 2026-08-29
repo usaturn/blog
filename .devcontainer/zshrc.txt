@@ -47,6 +47,9 @@ if command -v yarn >/dev/null 2>&1; then
 fi
 export PATH
 
+alias makea="uv run make clean && uv run make html"
+alias makec="uv run make html"
+alias serve="uv run make serve"
 alias gitm="git fetch -p && git checkout origin/main"
 alias gitc="git branch -a| fzf | xargs git checkout"
 alias gitd="git branch | fzf | xargs git branch -D"

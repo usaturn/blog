@@ -61,6 +61,7 @@ exclude_patterns = [
     "README.rst",
     "CLAUDE.md",
     "tmp",
+    "docs",
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
